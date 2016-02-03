@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "PORT=3000 nodemon --harmony-destructuring server.js",
+    "bower": "bower install"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,12 @@
   },
   "homepage": "https://github.com/beatface/node-webserver#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "node-sass-middleware": "^0.8.0"
   },
   "devDependencies": {
+    "bower": "^1.7.7",
     "nodemon": "^1.8.1"
   }
 }

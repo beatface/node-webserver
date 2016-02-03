@@ -1,0 +1,22 @@
+{
+  "name": "node-webserver",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "“Emma <“emma.beaton@gmail.com”>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/beatface/node-webserver",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "font-awesome": "^4.5.0"
+  }
+}
