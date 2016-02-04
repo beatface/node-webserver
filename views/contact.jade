@@ -1,0 +1,16 @@
+extends temp.jade
+
+block content
+	h1 Contact devCal
+	p The best calendar that sort of works.
+
+	div #[i.fa.fa-calendar-times-o.fa-4x]
+
+	.container
+		form(method='POST')
+			.form-group
+				input.form-control(type='text', name='name', placeholder='Name')
+				input.form-control(type='email', name='email', placeholder='Email')
+				textarea.form-control(rows='5', name='message', placeholder='Message')
+				input.btn.btn-default(type='submit', value="Send!")
+

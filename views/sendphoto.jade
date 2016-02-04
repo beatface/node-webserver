@@ -1,0 +1,26 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/lib/font-awesome/css/font-awesome.css')
+		link(href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css')
+		link(rel='stylesheet' href='/stylesheets/style.css')
+	body
+		h1 Send Photos
+		p For no good reason.
+
+		div #[i.fa.fa-calendar-times-o.fa-4x]
+
+		.container
+			form(method='POST', enctype='multipart/form-data')
+				.form-group
+					input.form-control(type='file', name='photo', accept='image/*')
+					button.btn.btn-default(type='submit') Send dat!
+
+
+
+
+
+		script(src='/lib/jquery/dist/jquery.min.js')
+		script(src='/javascripts/simplejs.js')
