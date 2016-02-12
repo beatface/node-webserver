@@ -5,7 +5,6 @@ const router = express.Router();
 const _ = require('lodash');
 const cheerio = require('cheerio');
 const request = require('request');
-
 const Allcaps = require('../models/allcaps');
 const News = require('../models/news');
 
@@ -26,7 +25,6 @@ router.post('/api', (req, res) => {
 	});
 
 });
-
 
 // API/WEATHER route
 router.get('/api/weather', (req, res) => {

@@ -1,13 +1,11 @@
 "use strict";
 
 const express = require('express');
-const app = express.Router();
+const router = express.Router();
 const multer = require('multer');
 const imgur = require('imgur');
 const fs = require('fs');
 const crypto = require('crypto');
-
-const Contact = require('../models/contacts');
 
 var storage = multer.diskStorage({
   destination: 'uploads/',
@@ -19,41 +17,13 @@ var storage = multer.diskStorage({
   }
 })
 
-
 const upload = multer({ storage: storage });
 
-
-// calendar splash
-app.get('/', function (req, res) {
-	res.render('index', { myHeader: 'YO!'});
-});
-
-// contact page
-app.get('/contact', function(req, res) {
-	res.render('contact');
-});
-
-app.post('/contact', (req, res) => {
-
-	console.log(">>>>>>>>>>>>>>>>>>>", req.body);
-	const obj = new Contact({
-		name: req.body.name,
-		email: req.body.email,
-		message: req.body.message
-	});
-
-	obj.save((err, obj) => {
-		if (err) throw err;
-		console.log(obj);
-		res.render('contacted', { name: req.body.name });
-	});
-});
-
-app.get('/send-photos', (req, res) => {
+router.get('/send-photos', (req, res) => {
 	res.render('sendphoto');
 });
 
-app.post('/send-photos', upload.single('photo'), (req, res) => {
+router.post('/send-photos', upload.single('photo'), (req, res) => {
 	console.log("REQ.FILE", req.file);
 	var pic = '';
 	// A single image
@@ -71,7 +41,4 @@ app.post('/send-photos', upload.single('photo'), (req, res) => {
     });
 });
 
-
-
-
-module.exports = app;
+module.exports = router;

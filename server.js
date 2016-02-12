@@ -5,7 +5,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const multer = require('multer');
-const routes = require('./routes/routes');
+const routes = require('./routes/');
 const api = require('./routes/api');
 
 let db;
