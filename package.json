@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "PORT=3000 nodemon --harmony-destructuring server.js",
-    "bower": "bower install"
+    "bower": "bower install",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
