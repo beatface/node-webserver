@@ -2,10 +2,10 @@
 
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 const multer = require('multer');
-const imgur = require('imgur');
-const fs = require('fs');
 const crypto = require('crypto');
+const ctrl = require('../controllers/photos');
 
 var storage = multer.diskStorage({
   destination: 'uploads/',
@@ -19,26 +19,8 @@ var storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-router.get('/send-photos', (req, res) => {
-	res.render('sendphoto');
-});
+router.get('/send-photos', ctrl.index);
 
-router.post('/send-photos', upload.single('photo'), (req, res) => {
-	console.log("REQ.FILE", req.file);
-	var pic = '';
-	// A single image
-	imgur.uploadFile(req.file.path)
-    .then(function (json) {
-        console.log(json.data.link);
-        fs.unlink(req.file.path, () => {
-        	console.log("File successfully deleted locally!");
-        });
-		res.render('sent', { pic: json.data.link });
-    })
-    .catch(function (err) {
-        console.error(err.message);
-		res.send('<h1>you fucked it</h1>');
-    });
-});
+router.post('/send-photos', upload.single('photo'), ctrl.post);
 
 module.exports = router;
