@@ -1,6 +1,6 @@
 "use strict";
 
-
+const Contact = require('../models/contacts');
 
 module.exports.index = (req, res) => {
 	res.render('contact');
