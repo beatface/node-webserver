@@ -9,8 +9,8 @@ const routes = require('./routes/');
 const api = require('./routes/api');
 
 let db;
-console.log(process.env.MONGODB_USER);
-console.log(process.env.MONGODB_PW);
+
+console.log(process.env.NODE_ENV);
 
 // Connection URL
 if (process.env.NODE_ENV === "production") {
