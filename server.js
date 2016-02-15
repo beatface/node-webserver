@@ -11,7 +11,11 @@ const api = require('./routes/api');
 let db;
 
 // Connection URL
-const mongo_url = 'mongodb://localhost:27017/node-webserver';
+if (process.env.NODE_ENV === "production") {
+	var mongo_url = `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PW}@${process.env.MONGODB_URL}:${process.env.MONGODB_PORT}/node-webserver-emma`;
+} else {
+	var mongo_url = 'mongodb://localhost:27017/node-webserver';
+}
 const PORT = process.env.port || 3000;
 const app = express();
 
