@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --harmony-destructuring server.js",
+    "start": "node server.js",
     "dev": "PORT=3000 nodemon --harmony-destructuring server.js",
     "bower": "bower install"
   },
