@@ -8,7 +8,7 @@
     "start": "node server.js",
     "dev": "PORT=3000 nodemon --harmony-destructuring server.js",
     "bower": "bower install",
-    "postinstall": "bower install"
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "repository": {
     "type": "git",
