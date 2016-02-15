@@ -14,6 +14,7 @@ console.log(process.env.NODE_ENV);
 
 // Connection URL
 if (process.env.NODE_ENV === "production") {
+	console.log("yes, it's production");
 	var mongo_url = `mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PW}@${process.env.MONGODB_URL}:${process.env.MONGODB_PORT}/node-webserver-emma`;
 } else {
 	var mongo_url = 'mongodb://localhost:27017/node-webserver';
